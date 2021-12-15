@@ -8,6 +8,7 @@ public class GamingInput : MonoBehaviour
 {
     void Awake()
     {
+#if UNITY_EDITOR
         PlayerInput inputComp = GetComponent<PlayerInput>();
         InputActionAsset IAssets = inputComp.actions;
         Dictionary<string, List<string>> actionDict = new Dictionary<string, List<string>>();
@@ -87,4 +88,5 @@ public class GamingInput : MonoBehaviour
         fileW.Close();
         file.Close();
     }
+ #endif
 }
